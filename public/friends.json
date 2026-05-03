@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Alex Carter",
-    "picture": "https://api.dicebear.com/7.x/avataaars/svg?seed=Alex",
+    "picture": "https://api.dicebear.com/9.x/avataaars/svg?seed=Leah",
     "email": "alex.carter@example.com",
     "days_since_contact": 18,
     "status": "Overdue",
@@ -14,7 +14,7 @@
   {
     "id": 2,
     "name": "Maya Singh",
-    "picture": "https://api.dicebear.com/7.x/avataaars/svg?seed=Maya",
+    "picture": "https://api.dicebear.com/9.x/toon-head/svg?flip=false",
     "email": "maya.singh@example.com",
     "days_since_contact": 10,
     "status": "Almost Due",
@@ -26,7 +26,7 @@
   {
     "id": 3,
     "name": "Lucas Brown",
-    "picture": "https://api.dicebear.com/7.x/avataaars/svg?seed=Lucas",
+    "picture": "https://api.dicebear.com/9.x/toon-head/svg?seed=Eliza",
     "email": "lucas.brown@example.com",
     "days_since_contact": 5,
     "status": "On-Track",

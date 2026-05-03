@@ -3,6 +3,7 @@ import Layout from "../Layout/Layout"
 import TimeLine from "../Components/TimeLine/TimeLine"
 import Status from "../Components/Status/Status"
 import Home from "../Components/Home/Home"
+import FriendDetails from "../Components/FriendDetails/FriendDetails"
 
 const router = createBrowserRouter([
     {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
             {
                 path: '/status',
                 Component: Status
+            },
+            {
+                path: '/friends/:friendId',
+                Component: FriendDetails
             }
         ]
     },
