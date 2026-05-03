@@ -11,7 +11,7 @@ const NavBar = () => {
         <li><NavLink to="/status" className={({ isActive }) => `py-2 rounded-lg ${isActive ? 'font-bold text-white bg-[#244D3F]' : ''}`}><ChartLine strokeWidth={2.25} />Stats</NavLink></li>
     </>
     return (
-    <div className="navbar px-20 bg-base-100 shadow-sm">
+    <div className="navbar md:px-10 bg-base-100 shadow-sm">
         <div className="navbar-start">
             <div className="dropdown">
                 <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

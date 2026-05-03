@@ -8,7 +8,7 @@ const Friends = () => {
         .then(res => res.json())
     return (
         <div>
-            <h2 className='text-2xl font-semibold mb-4'>Friends</h2>
+            <h2 className='text-2xl text-[#1F2937] font-semibold mb-4'>Friends</h2>
             <Suspense fallback={
                 <div className='justify-center flex items-center'>
                     {/* <DNA
