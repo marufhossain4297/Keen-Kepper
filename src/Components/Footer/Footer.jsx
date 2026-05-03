@@ -7,7 +7,7 @@ const Footer = () => {
     return (
         <div className="bg-[#244D3F] text-white">
             <div className="text-center pb-10 pt-20">
-                <h2 className='text-7xl font-bold'>KeenKeeper</h2>
+                <h2 className='md:text-7xl text-5xl font-bold'>KeenKeeper</h2>
                 <p className="mt-4 mb-6 text-[#8FA39C]">Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.</p>
                 <div className="">
                     <p className="text-xl mb-4 font-medium">Social Links</p>
@@ -20,12 +20,14 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
+
             <div className="border-t border-[#225946]"></div>
-            <div className="flex justify-between px-31.25 py-8">
+
+            <div className="md:flex justify-between pl-10 md:px-31.25 py-8">
                 <div>
                     <p className="text-[#8FA39C] font-light">© 2026 KeenKeeper. All rights reserved.</p>
                 </div>
-                <div className="flex gap-9 text-[#8FA39C] font-light">
+                <div className="grid pt-5 lg:pt-0 grid-cols-1 md:grid-cols-3 gap-9 text-[#8FA39C] font-light">
                     <Link to="/">Privacy Policy</Link>
                     <Link to="/">Terms of Service</Link>
                     <Link to="/">Cookies</Link>

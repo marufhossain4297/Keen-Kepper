@@ -10,7 +10,7 @@ const Friend = ({ friendsPromise }) => {
                     <Link to={`/friends/${friend.id}`} className="bg-white py-5 rounded-lg shadow-sm text-center">
                         <img className="w-20 h--20 rounded-full mx-auto" src={friend.picture} alt="" />
                         <h3 className="text-xl text-[#1F2937] font-semibold mb-1 mt-3">{friend.name}</h3>
-                        <p className="text-[#64748B] mb-3">{friend.goal}d ago</p>
+                        <p className="text-[#64748B] mb-3">{friend.days_since_contact}d ago</p>
                         {
                             friend.tags.map(tag =>
                                 <span className="text-xs text-[#244D3F] bg-[#CBFADB] font-semibold px-2 py-1 rounded-full mr-1">{tag}</span>)
