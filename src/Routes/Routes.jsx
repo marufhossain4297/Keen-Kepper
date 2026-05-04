@@ -28,11 +28,8 @@ const router = createBrowserRouter([
                 Component: FriendDetails,
                 loader: () => fetch('/friends.json'),
             },
-            {
-                path: '*',
-                Component: ErrorPage
-            }
         ],
+        errorElement: <ErrorPage />
     },
 ])
 
