@@ -7,7 +7,7 @@ const Friend = ({ friendsPromise }) => {
         <div className="grid mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-20">
             {
                 friends.map(friend =>
-                    <Link to={`/friends/${friend.id}`} className="bg-white py-5 rounded-lg shadow-sm text-center">
+                    <Link to={`/friends/${friend.id}`} className="border border-black/10 bg-white py-5 rounded-lg shadow-sm text-center before:absolute before:left-4 before:right-4 before:top-8 before:-bottom-4  before:rounded-[28px] before:z-[-1] before:bg-linear-to-br before:from-fuchsia-400 before:via-purple-500 before:to-cyan-400 before:opacity-0 before:blur-2xl before:transition-opacity before:duration-300 hover:before:opacity-75 transition-all duration-300 ease-out hover:-translate-y-1">
                         <img className="w-20 h--20 rounded-full mx-auto" src={friend.picture} alt="" />
                         <h3 className="text-xl text-[#1F2937] font-semibold mb-1 mt-3">{friend.name}</h3>
                         <p className="text-[#64748B] mb-3">{friend.days_since_contact}d ago</p>
