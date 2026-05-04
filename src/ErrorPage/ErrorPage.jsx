@@ -1,6 +1,7 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 export default function ErrorPage() {
+  const navigate = useNavigate();
   return (
     <div className="my-35 flex flex-col items-center justify-center px-4">
       
@@ -28,9 +29,9 @@ export default function ErrorPage() {
           <Link to="/" className="btn border-none bg-green-700 text-white px-5 py-2 rounded-lg hover:bg-green-800 transition">
             Go Home
           </Link>
-          <Link to="/" className="btn border-none bg-gray-100 text-gray-700 px-5 py-2 rounded-lg hover:bg-gray-200 transition">
+          <button onClick={() => navigate(-1)} className="btn border-none bg-gray-100 text-gray-700 px-5 py-2 rounded-lg hover:bg-gray-200 transition">
             Go Back
-          </Link>
+          </button>
         </div>
       </div>
 
