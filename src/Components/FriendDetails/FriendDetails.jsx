@@ -5,11 +5,38 @@ import { FaRegTrashAlt } from "react-icons/fa";
 import call from '../../image/Vector (1).png'
 import text from '../../image/ChatDots.png'
 import video from '../../image/VideoCamera.png'
+import { useEffect, useState } from "react";
+import { CirclesWithBar } from "react-loader-spinner";
 
 const FriendDetails = () => {
+    const [loading, setLoading] = useState(false)
 
     const { friendId } = useParams()
     const friends = useLoaderData()
+    useEffect(() => {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        setLoading(true);
+        const timer = setTimeout(() => {
+            setLoading(false);
+        }, 1000); // Simulate a loading delay of 1 second
+
+        return () => clearTimeout(timer); // Cleanup the timer on unmount
+    }, [friendId]); // Re-run the effect when friendId changes
+
+    if (loading) {
+        return <div className="flex justify-center py-60 items-center"> <CirclesWithBar
+            height="100"
+            width="100"
+            color="#4fa94d"
+            outerCircleColor="#4fa94d"
+            innerCircleColor="#4fa94d"
+            barColor="#4fa94d"
+            ariaLabel="circles-with-bar-loading"
+            wrapperStyle={{}}
+            wrapperClass=""
+            visible={true}
+        /></div>;
+    }
 
     const friend = friends.find(friend => friend.id == friendId)
 
