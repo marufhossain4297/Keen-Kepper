@@ -24,7 +24,7 @@ const router = createBrowserRouter([
                 Component: Status
             },
             {
-                path: '/friends/:friendId',
+                path: '/friends/:friendName',
                 Component: FriendDetails,
                 loader: () => fetch('/friends.json'),
             },

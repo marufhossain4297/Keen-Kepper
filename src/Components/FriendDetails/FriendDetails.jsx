@@ -11,7 +11,7 @@ import { CirclesWithBar } from "react-loader-spinner";
 const FriendDetails = () => {
     const [loading, setLoading] = useState(false)
 
-    const { friendId } = useParams()
+    const { friendName } = useParams()
     const friends = useLoaderData()
     useEffect(() => {
         // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -21,7 +21,7 @@ const FriendDetails = () => {
         }, 1000); // Simulate a loading delay of 1 second
 
         return () => clearTimeout(timer); // Cleanup the timer on unmount
-    }, [friendId]); // Re-run the effect when friendId changes
+    }, [friendName]); // Re-run the effect when friendName changes
 
     if (loading) {
         return <div className="flex justify-center py-60 items-center"> <CirclesWithBar
@@ -38,7 +38,7 @@ const FriendDetails = () => {
         /></div>;
     }
 
-    const friend = friends.find(friend => friend.id == friendId)
+    const friend = friends.find(friend => friend.name === friendName)
 
     return (
         <div className="lg:flex justify-center lg:flex-row gap-6 flex-col py-20">
