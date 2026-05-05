@@ -7,9 +7,13 @@ import text from '../../image/ChatDots.png'
 import video from '../../image/VideoCamera.png'
 import { useEffect, useState } from "react";
 import { CirclesWithBar } from "react-loader-spinner";
+import { toast } from "react-toastify";
 
 const FriendDetails = () => {
     const [loading, setLoading] = useState(false)
+    const [friendi, setFriendi] = useState([])
+    console.log(friendi);
+
 
     const { friendName } = useParams()
     const friends = useLoaderData()
@@ -40,6 +44,14 @@ const FriendDetails = () => {
 
     const friend = friends.find(friend => friend.name === friendName)
 
+    // const isExisting = friendi.find(f => f.name === friendi.name)
+    // if(isExisting){
+    //     toast.error("Already checked in with this friend!");
+    //     return;
+    // }
+    // else{
+    //     setFriendi([...friendi, friendi]);
+    // }
     return (
         <div className="lg:flex justify-center lg:flex-row gap-6 flex-col py-20">
             <div className="">
@@ -48,8 +60,8 @@ const FriendDetails = () => {
                     <h3 className="text-xl text-[#1F2937] font-semibold mb-1 mt-3">{friend.name}</h3>
                     <p className="text-[#64748B] mb-3">{friend.goal}d ago</p>
                     {
-                        friend.tags.map(tag =>
-                            <span className="text-xs text-[#244D3F] bg-[#CBFADB] font-semibold px-2 py-1 rounded-full mr-1">{tag}</span>)
+                        friend.tags.map((tag, ind) =>
+                            <span key={ind} className="text-xs text-[#244D3F] bg-[#CBFADB] font-semibold px-2 py-1 rounded-full mr-1">{tag}</span>)
                     }
                     <p className={`text-white rounded-full w-26 justify-self-center mt-2.5 py-1 ${friend.status === 'Overdue' ? 'bg-[#EF4444]' : friend.status === 'Almost Due' ? 'bg-[#EFAD44]' : 'bg-[#244D3F]'} font-medim`}>
                         {friend.status}
@@ -90,18 +102,22 @@ const FriendDetails = () => {
                 <div className="bg-white shadow-[0_0_10px_3px_rgba(0,0,0,0.05),0_0_8px_0px_rgba(0,0,0,0.05)] my-6 p-6 rounded-lg">
                     <p className="text-xl font-medium mb-5 text-[#244D3F]">Quick Check-In</p>
                     <div className="grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 gap-5">
-                        <button className="btn flex-col px-20 py-12">
+
+                        <button onClick={() => { setFriendi([...friendi, friend]); toast.success("Check-in recorded!"); }} className="btn flex-col px-20 py-12">
                             <img src={call} alt="" />
                             Call
                         </button>
-                        <button className="btn flex-col px-20 py-12">
+
+                        <button onClick={() => { setFriendi([...friendi, friend]); toast.success("Check-in recorded!"); }} className="btn flex-col px-20 py-12">
                             <img src={text} alt="" />
                             Text
                         </button>
-                        <button className="btn flex-col px-20 py-12">
+
+                        <button onClick={() => { setFriendi([...friendi, friend]); toast.success("Check-in recorded!"); }} className="btn flex-col px-20 py-12">
                             <img src={video} alt="" />
                             Video
                         </button>
+
                     </div>
                 </div>
             </div>

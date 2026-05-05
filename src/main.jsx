@@ -3,9 +3,11 @@ import { createRoot } from 'react-dom/client'
 import { RouterProvider } from 'react-router'
 import './index.css'
 import router from './Routes/Routes'
+import { ToastContainer } from 'react-toastify'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={router} />
+    <ToastContainer className='mt-5 rounded-3xl' position='top-center' />
   </StrictMode>,
 )
