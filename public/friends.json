@@ -9,7 +9,10 @@
     "tags": ["COLLAGE", "CLOSE FRIEND"],
     "bio": "Met during computer science classes. Enjoys hiking and coding side projects.",
     "goal": 14,
-    "next_due_date": "2025-07-20"
+    "next_due_date": "2025-07-20",
+    "call": "Call",
+    "text": "Text",
+    "video": "Video"
   },
   {
     "id": 2,
@@ -21,7 +24,10 @@
     "tags": ["WORK", "DESIGN"],
     "bio": "Colleague from design team. Loves minimalism and photography.",
     "goal": 14,
-    "next_due_date": "2025-07-24"
+    "next_due_date": "2025-07-24",
+    "call": "Call",
+    "text": "Text",
+    "video": "Video"
   },
   {
     "id": 3,
@@ -33,7 +39,10 @@
     "tags": ["GYM", "HEALTH"],
     "bio": "Workout partner. Focused on strength training and nutrition.",
     "goal": 10,
-    "next_due_date": "2025-07-28"
+    "next_due_date": "2025-07-28",
+    "call": "Call",
+    "text": "Text",
+    "video": "Video"
   },
   {
     "id": 4,
@@ -45,7 +54,10 @@
     "tags": ["FAMILY"],
     "bio": "Cousin living abroad. We usually catch up over video calls.",
     "goal": 15,
-    "next_due_date": "2025-07-18"
+    "next_due_date": "2025-07-18",
+    "call": "Call",
+    "text": "Text",
+    "video": "Video"
   },
   {
     "id": 5,
@@ -57,7 +69,10 @@
     "tags": ["STARTUP", "TECH"],
     "bio": "Met at a startup event. Interested in AI and product building.",
     "goal": 14,
-    "next_due_date": "2025-07-22"
+    "next_due_date": "2025-07-22",
+    "call": "Call",
+    "text": "Text",
+    "video": "Video"
   },
   {
     "id": 6,
@@ -69,7 +84,10 @@
     "tags": ["TRAVEL"],
     "bio": "Travel buddy from Spain trip. Loves exploring new cultures.",
     "goal": 10,
-    "next_due_date": "2025-07-30"
+    "next_due_date": "2025-07-30",
+    "call": "Call",
+    "text": "Text",
+    "video": "Video"
   },
   {
     "id": 7,
@@ -81,7 +99,10 @@
     "tags": ["SCHOOL"],
     "bio": "High school friend. We used to play basketball together.",
     "goal": 20,
-    "next_due_date": "2025-07-15"
+    "next_due_date": "2025-07-15",
+    "call": "Call",
+    "text": "Text",
+    "video": "Video"
   },
   {
     "id": 8,
@@ -93,7 +114,10 @@
     "tags": ["BOOK CLUB"],
     "bio": "Met through a book club. Enjoys mystery novels.",
     "goal": 14,
-    "next_due_date": "2025-07-23"
+    "next_due_date": "2025-07-23",
+    "call": "Call",
+    "text": "Text",
+    "video": "Video"
   },
   {
     "id": 9,
@@ -105,7 +129,10 @@
     "tags": ["GAMING"],
     "bio": "Online gaming friend. Plays strategy and RPG games.",
     "goal": 7,
-    "next_due_date": "2025-07-29"
+    "next_due_date": "2025-07-29",
+    "call": "Call",
+    "text": "Text",
+    "video": "Video"
   },
   {
     "id": 10,
@@ -117,7 +144,10 @@
     "tags": ["SPORTS"],
     "bio": "Artist friend. We met at a gallery exhibition.",
     "goal": 12,
-    "next_due_date": "2025-07-19"
+    "next_due_date": "2025-07-19",
+    "call": "Call",
+    "text": "Text",
+    "video": "Video"
   },
   {
     "id": 11,
@@ -129,7 +159,10 @@
     "tags": ["ENGENNERING"],
     "bio": "Bandmate from a local group. Plays guitar.",
     "goal": 14,
-    "next_due_date": "2025-07-25"
+    "next_due_date": "2025-07-25",
+    "call": "Call",
+    "text": "Text",
+    "video": "Video"
   },
   {
     "id": 12,
@@ -141,6 +174,9 @@
     "tags": ["LANGUAGE EXCHANGE"],
     "bio": "Language partner for practicing Italian and English.",
     "goal": 10,
-    "next_due_date": "2025-07-27"
+    "next_due_date": "2025-07-27",
+    "call": "Call",
+    "text": "Text",
+    "video": "Video"
   }
 ]

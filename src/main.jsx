@@ -4,10 +4,13 @@ import { RouterProvider } from 'react-router'
 import './index.css'
 import router from './Routes/Routes'
 import { ToastContainer } from 'react-toastify'
+import FriendProvider from './Components/Context/UseContex'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
-    <ToastContainer className='mt-5 rounded-3xl' position='top-center' />
+    <FriendProvider>
+      <RouterProvider router={router} />
+      <ToastContainer className='mt-5 rounded-3xl' position='top-center' />
+    </FriendProvider>
   </StrictMode>,
 )

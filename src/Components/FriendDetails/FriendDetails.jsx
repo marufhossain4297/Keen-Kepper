@@ -2,18 +2,19 @@ import { useLoaderData, useParams } from "react-router";
 import { FaBell } from "react-icons/fa";
 import { FaArchive } from "react-icons/fa";
 import { FaRegTrashAlt } from "react-icons/fa";
-import call from '../../image/Vector (1).png'
-import text from '../../image/ChatDots.png'
-import video from '../../image/VideoCamera.png'
-import { useEffect, useState } from "react";
+import callImage from '../../image/Vector (1).png'
+import textImage from '../../image/ChatDots.png'
+import videoImage from '../../image/VideoCamera.png'
+import { useContext, useEffect, useState } from "react";
 import { CirclesWithBar } from "react-loader-spinner";
 import { toast } from "react-toastify";
+import { FriendContext } from "../Context/UseContex";
 
 const FriendDetails = () => {
     const [loading, setLoading] = useState(false)
-    const [friendi, setFriendi] = useState([])
-    console.log(friendi);
 
+    const { friendi, setFriendi } = useContext(FriendContext)
+    console.log(friendi);
 
     const { friendName } = useParams()
     const friends = useLoaderData()
@@ -104,18 +105,18 @@ const FriendDetails = () => {
                     <div className="grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 gap-5">
 
                         <button onClick={() => { setFriendi([...friendi, friend]); toast.success("Check-in recorded!"); }} className="btn flex-col px-20 py-12">
-                            <img src={call} alt="" />
-                            Call
+                            <img src={callImage} alt="" />
+                            {friend.call}
+                        </button>
+
+                        <button onClick={() => { setFriendi([...friendi, friend, friend.call]); toast.success("Check-in recorded!"); }} className="btn flex-col px-20 py-12">
+                            <img src={textImage} alt="" />
+                            {friend.text}
                         </button>
 
                         <button onClick={() => { setFriendi([...friendi, friend]); toast.success("Check-in recorded!"); }} className="btn flex-col px-20 py-12">
-                            <img src={text} alt="" />
-                            Text
-                        </button>
-
-                        <button onClick={() => { setFriendi([...friendi, friend]); toast.success("Check-in recorded!"); }} className="btn flex-col px-20 py-12">
-                            <img src={video} alt="" />
-                            Video
+                            <img src={videoImage} alt="" />
+                            {friend.video}
                         </button>
 
                     </div>
