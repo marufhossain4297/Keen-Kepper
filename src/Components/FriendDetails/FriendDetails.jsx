@@ -16,6 +16,11 @@ const FriendDetails = () => {
     const { friendi, setFriendi } = useContext(FriendContext)
     console.log(friendi);
 
+    // const btnValue = (e) => {
+    //     e.target.value
+    // }
+    // console.log(btnValue);
+
     const { friendName } = useParams()
     const friends = useLoaderData()
     useEffect(() => {
@@ -104,7 +109,14 @@ const FriendDetails = () => {
                     <p className="text-xl font-medium mb-5 text-[#244D3F]">Quick Check-In</p>
                     <div className="grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 gap-5">
 
-                        <button onClick={() => { setFriendi([...friendi, friend]); toast.success("Check-in recorded!"); }} className="btn flex-col px-20 py-12">
+                        {
+                            friend.button.map((btn, ind) => 
+                            <button key={ind} onClick={() => { setFriendi([...friendi, friend]); toast.success("Check-in recorded!");}} className="btn flex-col px-20 py-12">
+                                <img src={btn === "Call" ? callImage : btn === "Text" ? textImage : videoImage} alt="" />
+                                {btn == "Call" ? 'Call' : btn === "Text" ? 'Text' : 'Video'}
+                            </button>)
+                        }
+                        {/* <button onClick={() => { setFriendi([...friendi, friend]); toast.success("Check-in recorded!"); }} className="btn flex-col px-20 py-12">
                             <img src={callImage} alt="" />
                             {friend.call}
                         </button>
@@ -117,7 +129,7 @@ const FriendDetails = () => {
                         <button onClick={() => { setFriendi([...friendi, friend]); toast.success("Check-in recorded!"); }} className="btn flex-col px-20 py-12">
                             <img src={videoImage} alt="" />
                             {friend.video}
-                        </button>
+                        </button> */}
 
                     </div>
                 </div>
