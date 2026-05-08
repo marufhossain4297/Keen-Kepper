@@ -1,4 +1,4 @@
-import { MessageSquareText, Phone, TextAlignJustify, Video } from "lucide-react";
+import { LayoutList, MessageSquareText, Phone, TextAlignJustify, Video } from "lucide-react";
 import { FriendContext } from "../Context/UseContex";
 import { useContext } from "react";
 import callImage from '../../image/Vector (1).png'
@@ -25,7 +25,22 @@ const TimeLine = () => {
                 <option><Video size={15} />Video</option>
             </select>
             <div>
-                {friendi.length === 0 ? <p className="text-center text-[#64748B]">No check-ins recorded yet.</p>
+                {friendi.length === 0 ?
+                    (
+                        /* Enhanced Empty State UI */
+                        <div className="flex mb-10 flex-col items-center justify-center py-24 text-center border-2 border-dashed border-gray-100 rounded-3xl bg-gray-50/50">
+                            <div className="bg-white p-6 rounded-full shadow-sm mb-6">
+                                <LayoutList size={48} className="text-[#2D4F3F] opacity-40" />
+                            </div>
+                            <h3 className="text-2xl font-bold text-gray-800 mb-2">No check-ins recorded yet.</h3>
+                            <p className="text-gray-500 max-w-sm mb-8">
+                                Your personal shelf is empty. Start nurturing your connections by recording your first interaction.
+                            </p>
+                            <button className="bg-[#2D4F3F] hover:bg-[#1a3026] text-white px-8 py-3 rounded-xl font-semibold transition-all shadow-md active:scale-95">
+                                + Record a Check-in
+                            </button>
+                        </div>
+                    )
                     :
 
                     friendi.map(friend => (
