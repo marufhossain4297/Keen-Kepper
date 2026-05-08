@@ -16,13 +16,13 @@ const TimeLine = () => {
         <div>
             <h2 className="mt-20 text-5xl font-bold mb-6">TimeLine</h2>
             <select defaultValue="Pick a color" className="select mb-6">
-                <option><TextAlignJustify size={15} />All</option>
+                <option><TextAlignJustify size={15} /><TextAlignJustify size={15} />All</option>
 
-                <option><Phone size={15} />Call</option>
+                <option><Phone size={15} /><Phone size={15} />Call</option>
 
-                <option> <MessageSquareText size={15} /> Text</option>
+                <option> <MessageSquareText size={15} /><MessageSquareText size={15} /> Text</option>
 
-                <option><Video size={15} />Video</option>
+                <option><Video size={15} /><Video size={15} />Video</option>
             </select>
             <div>
                 {friendi.length === 0 ? <p className="text-center text-[#64748B]">No check-ins recorded yet.</p>
