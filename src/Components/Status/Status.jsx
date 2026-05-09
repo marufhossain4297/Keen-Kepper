@@ -52,7 +52,7 @@ const EmptyStateUI = () => {
                 :
                 <div>
                     <div className="p-8 shadow-[0_0_10px_3px_rgba(0,0,0,0.05),0_0_8px_0px_rgba(0,0,0,0.05)] rounded-lg mb-20">
-                        <p>By Interaction Type</p>
+                        <p className="text-lg font-medium">By Interaction Type</p>
                         <div className="flex justify-center mt-10">
                             <Grafic></Grafic>
                         </div>

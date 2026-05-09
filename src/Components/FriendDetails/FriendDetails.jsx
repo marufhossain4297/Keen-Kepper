@@ -111,7 +111,7 @@ const FriendDetails = () => {
 
                         {
                             friend.button.map((btn, ind) => 
-                            <button key={ind} onClick={() => { setFriendi([...friendi, {friend, btn}]); toast.success("Check-in recorded!");}} className="btn flex-col px-20 py-12">
+                            <button key={ind} onClick={() => { setFriendi([...friendi, {friend, btn}]); toast.success(`${btn} with ${friend.name}`);}} className="btn flex-col px-20 py-12">
                                 <img src={btn === "Call" ? callImage : btn === "Text" ? textImage : videoImage} alt="" />
                                 {btn == "Call" ? 'Call' : btn === "Text" ? 'Text' : 'Video'}
                             </button>)
