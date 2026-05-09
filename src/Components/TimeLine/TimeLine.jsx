@@ -1,64 +1,82 @@
-import { LayoutList, MessageSquareText, Phone, TextAlignJustify, Video } from "lucide-react";
+import { LayoutList } from "lucide-react";
 import { FriendContext } from "../Context/UseContex";
-import { useContext } from "react";
+import { useContext, useState } from "react"; // Added useState
 import callImage from '../../image/Vector (1).png'
 import textImage from '../../image/ChatDots.png'
 import videoImage from '../../image/VideoCamera.png'
+import { Link } from "react-router";
 
 const TimeLine = () => {
-    const { friendi } = useContext(FriendContext)
+    const { friendi } = useContext(FriendContext);
+
+    const [filterType, setFilterType] = useState("All");
+
     const currentDate = new Date().toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'long',
         day: 'numeric',
     });
+
+    const displayList = friendi
+        .filter(friend => filterType === "All" || friend.btn === filterType)
+        .sort((a, b) => b.id - a.id);
+
     return (
-        <div>
+        <div className="mb-15 px-4 md:px-0">
             <h2 className="mt-20 text-5xl font-bold mb-6">TimeLine</h2>
-            <select defaultValue="Pick a color" className="select mb-6">
-                <option><TextAlignJustify size={15} />All</option>
 
-                <option><Phone size={15} />Call</option>
+            <div className="relative inline-block mb-8">
+                <select
+                    value={filterType}
+                    onChange={(e) => setFilterType(e.target.value)}
+                    className="select select-bordered w-full max-w-xs rounded-xl border-[#E9E9E9] focus:outline-none focus:ring-2 focus:ring-[#244D3F]/20"
+                >
+                    <option value="All">All Interactions</option>
+                    <option value="Call">Calls</option>
+                    <option value="Text">Texts</option>
+                    <option value="Video">Videos</option>
+                </select>
+            </div>
 
-                <option> <MessageSquareText size={15} /> Text</option>
-
-                <option><Video size={15} />Video</option>
-            </select>
             <div>
-                {friendi.length === 0 ?
+                {displayList.length === 0 ?
                     (
-                        /* Enhanced Empty State UI */
-                        <div className="flex mb-10 flex-col items-center justify-center py-24 text-center border-2 border-dashed border-gray-100 rounded-3xl bg-gray-50/50">
+                        <div className="flex mb-10 flex-col items-center justify-center py-24 text-center border-2 border-dashed border-gray-100 rounded-4xl bg-gray-50/50">
                             <div className="bg-white p-6 rounded-full shadow-sm mb-6">
                                 <LayoutList size={48} className="text-[#2D4F3F] opacity-40" />
                             </div>
-                            <h3 className="text-2xl font-bold text-gray-800 mb-2">No check-ins recorded yet.</h3>
+                            <h3 className="text-2xl font-bold text-gray-800 mb-2">No check-ins found.</h3>
                             <p className="text-gray-500 max-w-sm mb-8">
-                                Your personal shelf is empty. Start nurturing your connections by recording your first interaction.
+                                {filterType === "All"
+                                    ? "Your personal shelf is empty. Start nurturing your connections."
+                                    : `You haven't recorded any ${filterType} interactions yet.`}
                             </p>
-                            <button className="bg-[#2D4F3F] hover:bg-[#1a3026] text-white px-8 py-3 rounded-xl font-semibold transition-all shadow-md active:scale-95">
+                            <Link to="/" className="bg-[#2D4F3F] hover:bg-[#1a3026] text-white px-8 py-3 rounded-xl font-semibold transition-all shadow-md active:scale-95">
                                 + Record a Check-in
-                            </button>
+                            </Link>
                         </div>
                     )
                     :
-
-                    friendi.map(friend => (
-
-                        <div key={friend.id} className="bg-white py-4 w-full items-center rounded-lg mb-4 shadow-[0_0_10px_3px_rgba(0,0,0,0.05),0_0_8px_0px_rgba(0,0,0,0.05)]">
-                            <div className="flex items-center gap-2.5">
-                                <img src={friend.button === 'Call' ? callImage : friend.button === 'Text' ? textImage : videoImage} alt="" />
+                    displayList.map(friend => (
+                        <div key={friend.id}>
+                            <div className="rounded-[20px] mb-4 border border-[#E9E9E9] bg-white p-4 flex items-center gap-5 shadow-sm hover:shadow-md transition-shadow duration-300">
+                                <div className="bg-gray-50 p-3 rounded-xl">
+                                    <img
+                                        className="w-6 h-6 object-contain"
+                                        src={friend.btn === 'Call' ? callImage : friend.btn === 'Text' ? textImage : videoImage}
+                                        alt={friend.btn}
+                                    />
+                                </div>
                                 <div>
-                                    <div className="text-[#1F2937] font-semibold mb-1 flex mt-3">
-                                        <p>{friend.button === 'Call' ? 'Call' : friend.button === 'Text' ? 'Text' : 'Video'}</p>
-                                        <p>with {friend.name}</p>
+                                    <div className="text-[#1F2937] font-medium items-center mb-0.5 gap-2 flex">
+                                        <p className="text-[20px] text-[#244D3F] font-bold">{friend.btn}</p>
+                                        <p className="text-[18px] text-[#64748B] font-normal">with {friend.friend.name}</p>
                                     </div>
                                     <div className="text-left">
-                                        <p>{currentDate}</p>
+                                        <p className="text-[14px] text-[#94A3B8] font-medium uppercase tracking-wide">{currentDate}</p>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     ))
                 }

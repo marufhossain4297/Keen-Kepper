@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { FriendContext } from "../Context/UseContex";
 import { UserPlus, Sparkles, Coffee } from 'lucide-react';
-import grafic from '../../image/image 1.png'
+import Grafic from "../PieChart/PieChart";
 import { Link } from "react-router";
 
 const EmptyStateUI = () => {
@@ -10,8 +10,9 @@ const EmptyStateUI = () => {
 
     return (
         <div>
+            <h2 className="text-5xl font-bold mb-10 mt-20">Friendship Analytics</h2>
             {friendi.length === 0 ?
-                <div className="flex flex-col border-2 border-dashed border-gray-100 rounded-3xl bg-gray-50/50 items-center justify-center my-25 py-10 w-full px-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
+                <div className="flex flex-col border-2 border-dashed border-gray-100 rounded-3xl bg-gray-50/50 items-center justify-center mb-16 py-10 w-full px-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
 
                     <div className="relative mb-10">
                         <div className="absolute inset-0 bg-[#2D4F3F] opacity-5 blur-3xl rounded-full"></div>
@@ -25,11 +26,11 @@ const EmptyStateUI = () => {
                         </div>
                     </div>
 
-                    <h2 className="md:text-4xl text-3xl font-extrabold text-gray-900 mb-4 tracking-tight">
+                    <h2 className="text-2xl font-extrabold text-gray-900 mb-4 tracking-tight">
                         Time for a check-in?
                     </h2>
 
-                    <p className="text-gray-500 text-center max-w-md md:text-lg leading-relaxed mb-10">
+                    <p className="text-gray-500 text-center max-w-md leading-relaxed mb-10">
                         Your <span className="text-[#2D4F3F] font-semibold italic">personal shelf</span> of connections is empty.
                         Don't let those meaningful relationships gather dust!
                     </p>
@@ -48,30 +49,29 @@ const EmptyStateUI = () => {
                         <div className="h-px w-8 bg-black"></div>
                     </div>
                 </div>
-                : 
+                :
                 <div>
-            <h2 className="text-5xl font-bold mt-20 mb-6">Friendship Analytics</h2>
-            <div className="p-8 shadow-[0_0_10px_3px_rgba(0,0,0,0.05),0_0_8px_0px_rgba(0,0,0,0.05)] rounded-lg mb-20">
-                <p>By Interaction Type</p>
-                <div>
-                    <img src={grafic} alt="grafic" className="justify-self-center" />
+                    <div className="p-8 shadow-[0_0_10px_3px_rgba(0,0,0,0.05),0_0_8px_0px_rgba(0,0,0,0.05)] rounded-lg mb-20">
+                        <p>By Interaction Type</p>
+                        <div className="flex justify-center mt-10">
+                            <Grafic></Grafic>
+                        </div>
+                        <div className="flex gap-4 justify-center mt-6">
+                            <div className="flex items-center">
+                                <p className="h-3 w-3 bg-[#7F37F5] rounded-full mr-2"></p>
+                                <p className="text-[#7F37F5]">Text</p>
+                            </div>
+                            <div className="flex items-center">
+                                <p className="h-3 w-3 bg-[#244D3F] rounded-full mr-2"></p>
+                                <p className="text-[#244D3F]">Call</p>
+                            </div>
+                            <div className="flex items-center">
+                                <p className="h-3 w-3 bg-[#37A163] rounded-full mr-2"></p>
+                                <p className="text-[#37A163]">Video</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div className="flex gap-4 justify-center mt-6">
-                    <div className="flex items-center">
-                        <p className="h-3 w-3 bg-[#7F37F5] rounded-full mr-2"></p>
-                        <p>Text</p>
-                    </div>
-                    <div className="flex items-center">
-                        <p className="h-3 w-3 bg-[#244D3F] rounded-full mr-2"></p>
-                        <p>Call</p>
-                    </div>
-                    <div className="flex items-center">
-                        <p className="h-3 w-3 bg-[#37A163] rounded-full mr-2"></p>
-                        <p>Video</p>
-                    </div>
-                </div>
-            </div>
-        </div>
             }
         </div>
     );

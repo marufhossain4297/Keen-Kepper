@@ -10,7 +10,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <FriendProvider>
       <RouterProvider router={router} />
-      <ToastContainer className='mt-5 rounded-3xl' position='top-center' />
+      <ToastContainer className='mt-5' hideProgressBar autoClose={1000} position='top-center' />
     </FriendProvider>
   </StrictMode>,
 )
