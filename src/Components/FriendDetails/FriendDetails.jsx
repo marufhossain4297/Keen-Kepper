@@ -7,7 +7,7 @@ import textImage from '../../image/ChatDots.png'
 import videoImage from '../../image/VideoCamera.png'
 import { useContext, useEffect, useState } from "react";
 import { CirclesWithBar } from "react-loader-spinner";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 import { FriendContext } from "../Context/UseContex";
 
 const FriendDetails = () => {
